@@ -89,19 +89,25 @@ export const container = {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.05,
+        staggerChildren: 0.06, // Slightly slower stagger for better readability
+        delayChildren: 0.2,    // Small delay before starting children animations
+        when: "beforeChildren", // Ensures container fades in before children animate
       },
     },
   };
   
   export const letter = {
-    hidden: { y: 30, opacity: 0 },
+    hidden: { y: 40, opacity: 0 }, // Start a bit lower for more bounce effect
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.4,
-        ease: "easeOut",
+        duration: 0.5,       // Slightly longer for smoothness
+        ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier easing for natural ease-out
+        // Optional spring effect (commented out)
+        // type: "spring",
+        // damping: 12,
+        // stiffness: 100,
       },
     },
   };
