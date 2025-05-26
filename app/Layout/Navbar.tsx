@@ -1,11 +1,12 @@
 'use client'
 import { Dancing_Script } from 'next/font/google';
-
 import { motion, AnimatePresence } from 'framer-motion'
+
 import { useState } from 'react'
 import Link from 'next/link'
 import { Linkdin, Gmil, Github } from '../Icon/icons'
 import { menuVariants, burgerVariants,staggerContainer,staggerItem } from '../animations/animations'
+
 
 const dancingScript = Dancing_Script({
     subsets: ['latin'],
