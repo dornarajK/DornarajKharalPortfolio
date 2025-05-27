@@ -28,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased md:px-[20vh] `}
       >
+         <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
         <div className="md:border-x-1 border-[#4E6688]   ">
         <Navbar/>
         {children}

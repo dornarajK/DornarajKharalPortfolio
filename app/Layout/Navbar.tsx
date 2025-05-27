@@ -1,5 +1,6 @@
 'use client'
-import { Dancing_Script } from 'next/font/google';
+import { Yellowtail } from 'next/font/google';
+
 import { motion, AnimatePresence } from 'framer-motion'
 
 import { useState } from 'react'
@@ -8,10 +9,13 @@ import { Linkdin, Gmil, Github } from '../Icon/icons'
 import { menuVariants, burgerVariants,staggerContainer,staggerItem } from '../animations/animations'
 
 
-const dancingScript = Dancing_Script({
+const yellowtail = Yellowtail({
     subsets: ['latin'],
+    weight: ['400'],
     display: 'swap',
-})
+  });
+
+  
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false)
@@ -22,7 +26,8 @@ export default function Navbar() {
     return (
         <div className="flex justify-between items-center h-auto mt-[25px] px-4 relative">
             <div>
-                <h1 className={`font-extrabold text-3xl md:text-4xl text-[#4E6688] ${dancingScript.className}`}>Dornarj Kharal</h1>
+            <h1 className={`font-extrabold text-2xl md:text-2xl text-[#4E6688] ${yellowtail.className}`}>Dornarj Kharal</h1>
+
             </div>
 
             {/* Desktop Menu */}

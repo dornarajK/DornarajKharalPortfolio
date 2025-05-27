@@ -1,11 +1,23 @@
 "use client";
-
+import { Montserrat, Open_Sans } from 'next/font/google';
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { container, letter } from "./animations/animations";
 import Dornaraj from "./img/img";
 
 const GREETING_TEXT = "Hi, I'm Dornaraj and I'm a Frontend Developer";
+
+const montserrat = Montserrat({
+  subsets: ['latin'],
+  weight: ['700'],
+  display: 'swap',
+});
+
+const openSans = Open_Sans({
+  subsets: ['latin'],
+  weight: ['400'],
+  display: 'swap',
+});
 
 const Hero = () => {
   return (
@@ -17,27 +29,30 @@ const Hero = () => {
         initial="hidden"
         animate="visible"
       >
-      <h1 className="text-4xl md:text-5xl font-bold leading-tight text-white">
-  {GREETING_TEXT.split(" ").map((word, index, arr) => {
-    const isDevraj = word === "Dornaraj";
-    const isFrontendDev = word === "Frontend" || word === "Developer";
 
-    return (
-      <motion.span
-        key={index}
-        variants={letter}
-        className={`inline-block ${
-          isDevraj ? "text-blue-500" : isFrontendDev ? "text-green-500" : ""
-        }`}
-      >
-        {word}
-        {/* Lisää välilyönti, paitsi viimeisen sanan jälkeen */}
-        {index !== arr.length - 1 && "\u00A0"}
-      </motion.span>
-    );
-  })}
-</h1>
+        <h1
+          className={`text-4xl md:text-5xl font-bold leading-tight text-white drop-shadow-lg ${montserrat.className}`}
+          style={{ textShadow: '2px 2px 4px rgba(0, 0, 0, 0.5)' }}
+        >
+          {GREETING_TEXT.split(" ").map((word, index, arr) => {
+            const isDevraj = word === "Dornaraj";
+            const isFrontendDev = word === "Frontend" || word === "Developer";
 
+            return (
+              <motion.span
+                key={index}
+                variants={letter}
+                className={`inline-block ${isDevraj ? "text-[#4E6688]" : isFrontendDev ? "text-[#4E6688]" : ""
+                  }`}
+              >
+                {word}
+                {index !== arr.length - 1 && "\u00A0"}
+              </motion.span>
+            );
+          })}
+        </h1>
+
+       
       </motion.div>
 
       {/* Image Section */}
@@ -51,7 +66,10 @@ const Hero = () => {
           delay: 0.2,
         }}
       >
-        <div className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden bg-[#4E6688]/10 shadow-lg hover:shadow-xl transition-shadow duration-300">
+        <div
+          className="relative w-[280px] h-[280px] md:w-[400px] md:h-[400px] rounded-full overflow-hidden bg-[#4E6688]/10 transition-shadow duration-300"
+          style={{ boxShadow: '0 4px 15px rgba(0, 0, 0, 0.3)' }}
+        >
           <Image
             src={Dornaraj}
             alt="Dornaraj Kharal - Frontend Developer"
@@ -61,6 +79,7 @@ const Hero = () => {
             sizes="(max-width: 768px) 280px, 400px"
           />
         </div>
+
       </motion.div>
     </section>
   );

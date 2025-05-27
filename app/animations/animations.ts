@@ -89,25 +89,21 @@ export const container = {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.06, // Slightly slower stagger for better readability
-        delayChildren: 0.2,    // Small delay before starting children animations
-        when: "beforeChildren", // Ensures container fades in before children animate
+        staggerChildren: 0.07, 
+        delayChildren: 0.2,   
+        when: "beforeChildren", 
       },
     },
   };
   
   export const letter = {
-    hidden: { y: 40, opacity: 0 }, // Start a bit lower for more bounce effect
+    hidden: { y: 40, opacity: 0 }, 
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.5,       // Slightly longer for smoothness
-        ease: [0.4, 0, 0.2, 1], // Custom cubic-bezier easing for natural ease-out
-        // Optional spring effect (commented out)
-        // type: "spring",
-        // damping: 12,
-        // stiffness: 100,
+        duration: 0.7,       
+        ease: [0.4, 0, 0.2, 1], 
       },
     },
   };
