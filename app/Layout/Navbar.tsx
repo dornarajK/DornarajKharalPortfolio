@@ -135,6 +135,7 @@ export default function Navbar() {
                     </motion.li>
                 </motion.ul>
             </div>
+          
         </div>
     )
 }

@@ -1,3 +1,4 @@
+
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -29,9 +30,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased md:px-[20vh] `}
       >
          <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
-        <div className="md:border-x-1 border-[#4E6688]   ">
-        <Navbar/>
-        {children}
+        <div className="relative">
+          <div className="">
+            <Navbar/>
+            {children}
+          </div>
+   
         </div>
        
       </body>
