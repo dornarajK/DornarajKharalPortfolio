@@ -1,4 +1,5 @@
 import Dornaraj from './kuva.png';
+import test from './582804.png';
 
-export default Dornaraj;
+export { Dornaraj, test };
 

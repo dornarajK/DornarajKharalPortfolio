@@ -3,7 +3,8 @@ import { Montserrat, Open_Sans } from 'next/font/google';
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { container, letter } from "./animations/animations";
-import Dornaraj from "./img/img";
+import { Dornaraj } from "./img/img";
+
 
 const GREETING_TEXT = "Hi, I'm Dornaraj and I'm a Frontend Developer";
 
