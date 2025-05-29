@@ -3,7 +3,6 @@ import { motion, AnimatePresence, useInView } from 'framer-motion';
 import { useState, useRef } from 'react';
 import { journeyData, Education } from './Data'
 
-
 export default function Journey() {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, amount: 0.3 });
@@ -22,7 +21,7 @@ export default function Journey() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-4xl font-bold text-center text-[#4E6688] mb-8"
             >
-                My Journey
+               My Journey
             </motion.h1>
 
             <motion.div
@@ -34,19 +33,27 @@ export default function Journey() {
                 <div className="space-y-6">
                     <h3 className="text-xl font-semibold text-[#4E6688] mb-2">Work Experience</h3>
                     {journeyData.map((item, index) => (
-                        <div key={index} className="border-l-2 border-[#4E6688] pl-4">
-                            <p className="text-white/90 font-medium">{item.title}</p>
-                            <p className="text-white/70 text-sm">{item.period}</p>
-                            <p className="text-white/80 mt-2">{item.description}</p>
+                        <div key={index} className="border-l-2 border-[#4E6688] pl-4 mb-4">
+                            <div className="flex flex-col gap-1">
+                                <p className="text-white/90 font-medium text-lg">{item.title}</p>
+                                <p className="text-white/70 text-sm italic">{item.period}</p>
+                                <div className="mt-2 p-2 bg-white/5 rounded-md">
+                                    <p className="text-white/80">{item.description}</p>
+                                </div>
+                            </div>
                         </div>
                     ))}
-
+                    <div className="w-full h-px bg-[#4E6688]/20 my-6"></div>
                     <h3 className="text-xl font-semibold text-[#4E6688] mb-2">Education</h3>
                     {Education.map((item, index) => (
-                        <div key={index} className="border-l-2 border-[#4E6688] pl-4">
-                            <p className="text-white/90 font-medium">{item.title}</p>
-                            <p className="text-white/70 text-sm">{item.period}</p>
-                            <p className="text-white/80 mt-2">{item.description}</p>
+                        <div key={index} className="border-l-2 border-[#4E6688] pl-4 mb-4">
+                            <div className="flex flex-col gap-1">
+                                <p className="text-white/90 font-medium text-lg">{item.title}</p>
+                                <p className="text-white/70 text-sm italic">{item.period}</p>
+                                <div className="mt-2 p-2 bg-white/5 rounded-md">
+                                    <p className="text-white/80">{item.description}</p>
+                                </div>
+                            </div>
                         </div>
                     ))}
                 </div>

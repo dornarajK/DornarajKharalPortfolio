@@ -1,16 +1,19 @@
 "use client";
-import { motion, useInView } from 'framer-motion'
-import { useRef } from 'react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { projectData } from './Data'
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { projectData } from "./Data";
 
 export default function MyProjects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, amount: 0.2 });
 
   return (
-    <section id="myprojects" className="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+    <section
+      id="myprojects"
+      className="py-20 px-4 md:px-8 max-w-7xl mx-auto text-white"
+    >
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -33,19 +36,23 @@ export default function MyProjects() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#4E6688]/50 transition-all duration-300"
+            className="group relative bg-gradient-to-br from-white/5 to-white/10 backdrop-blur-sm rounded-2xl overflow-hidden border border-white/10 hover:border-[#4E6688]/50 transition-all duration-300 flex flex-col"
           >
             <div className="relative h-64 w-full overflow-hidden">
               <Image
                 src={project.kuva}
                 alt={project.title}
                 fill
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                priority={index < 2}
+                quality={90}
+                className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                style={{ objectPosition: 'center' }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
 
-            <div className="p-6 relative z-10">
+            <div className="p-6 flex flex-col flex-grow">
               <h3 className="text-2xl font-bold mb-3 text-[#4E6688] group-hover:text-white transition-colors duration-300">
                 {project.title}
               </h3>
@@ -65,25 +72,29 @@ export default function MyProjects() {
                 ))}
               </div>
 
-              <div className="flex gap-4">
-                <div className="flex-1">
+              <div className="flex gap-4 mt-auto">
+                {project.live !== "ei" && (
                   <Link
                     href={project.live}
                     target="_blank"
-                    className="block w-full px-4 py-2.5 bg-[#4E6688] hover:bg-[#4E6688]/80 text-white rounded-xl text-center transition-all font-medium shadow-lg hover:shadow-xl group-hover:bg-white group-hover:text-[#4E6688]"
+                    rel="noopener noreferrer"
+                    aria-label={`View live demo of ${project.title}`}
+                    className="flex-1 px-4 py-2.5 bg-[#4E6688] hover:bg-[#4E6688]/80 text-white rounded-xl text-center transition-all font-medium shadow-lg hover:shadow-xl group-hover:bg-white group-hover:text-[#4E6688]"
                   >
                     Live Demo
                   </Link>
-                </div>
-                <div className="flex-1">
+                )}
+                {project.git !== "ei" && (
                   <Link
                     href={project.git}
                     target="_blank"
-                    className="block w-full px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl text-center transition-all font-medium shadow-lg hover:shadow-xl group-hover:bg-white/30"
+                    rel="noopener noreferrer"
+                    aria-label={`View GitHub repository of ${project.title}`}
+                    className="flex-1 px-4 py-2.5 bg-white/10 hover:bg-white/20 text-white rounded-xl text-center transition-all font-medium shadow-lg hover:shadow-xl group-hover:bg-white/30"
                   >
                     GitHub
                   </Link>
-                </div>
+                )}
               </div>
             </div>
           </motion.div>

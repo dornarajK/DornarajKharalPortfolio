@@ -1,5 +1,8 @@
-import Dornaraj from './kuva.png';
-import test from './582804.png';
+import Dornaraj from './Dornaraj.png';
+import Blogify from'./Blogify.png';
+import Focuse from'./Focuse.png';
+import Kalenteri from'./kalenteri.png';
 
-export { Dornaraj, test };
+
+export { Dornaraj, Blogify,Focuse,Kalenteri };
 
