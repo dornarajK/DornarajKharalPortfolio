@@ -2,9 +2,10 @@
 import { Montserrat, Open_Sans } from 'next/font/google';
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { container, letter } from "./animations/animations";
+import { staggerContainer, staggerItem, container, letter } from "./animations/animations";
 import { Dornaraj } from "./img/img";
-
+import { FaReact, FaJs, FaHtml5, FaCss3Alt } from 'react-icons/fa'
+import { SiTypescript, SiNextdotjs, SiTailwindcss } from 'react-icons/si'
 
 const GREETING_TEXT = "Hi, I'm Dornaraj and I'm a Frontend Developer";
 
@@ -52,8 +53,39 @@ const Hero = () => {
             );
           })}
         </h1>
+        {/*skill*/}
+        <motion.div
+          className="flex gap-4 mt-6 justify-center md:justify-start"
+          variants={staggerContainer}
+          initial="hidden"
+          animate="show"
+        >
+          <motion.div
+            variants={staggerItem}
+            whileHover={{ scale: 1.05 }}
+            className="text-[#61DAFB] hover:text-[#61DAFB]/80 transition-colors"
+          >
+            <FaReact className="w-8 h-8" />
+            <span className="text-white text-sm">React</span>
+          </motion.div>
+          <motion.div
+            variants={staggerItem}
+            whileHover={{ scale: 1.05 }}
+            className="text-[#06B6D4] hover:text-[#06B6D4]/80 transition-colors"
+          >
+            <SiTailwindcss className="w-8 h-8" />
+            <span className="text-white text-sm">Tailwind</span>
+          </motion.div>
+          <motion.div
+            variants={staggerItem}
+            whileHover={{ scale: 1.05 }}
+            className="text-[#3178C6] hover:text-[#3178C6]/80 transition-colors"
+          >
+            <SiTypescript className="w-8 h-8" />
+            <span className="text-white text-sm">TypeScript</span>
+          </motion.div>
+        </motion.div>
 
-       
       </motion.div>
 
       {/* Image Section */}
@@ -83,9 +115,9 @@ const Hero = () => {
 
       </motion.div>
 
-   
+
     </section>
-    
+
   );
 };
 

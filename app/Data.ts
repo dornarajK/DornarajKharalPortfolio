@@ -67,7 +67,7 @@ export const projectData: Project[] = [
         description: "A user-friendly calendar view built with React and CSS to showcase student club events at BC. Designed to be visually clear, color-coded by club, and easily filterable by event type or tags. Created as part of a frontend internship project.",
         tech: ["React", "CSS"],
         live: "ei",
-        git: "https://github.com/DamienKuosmanen/bc-kerhot"
+        git: "ei"
     },
     {
         kuva: Focuse,
