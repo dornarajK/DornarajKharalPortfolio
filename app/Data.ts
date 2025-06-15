@@ -1,4 +1,4 @@
-import { Blogify,Focuse,Kalenteri} from './img/img'
+import { Blogify,Focuse,Kalenteri,Boost} from './img/img'
 
 
 
@@ -68,6 +68,14 @@ export const projectData: Project[] = [
         tech: ["React", "CSS"],
         live: "ei",
         git: "ei"
+    },
+    {
+        kuva: Boost,
+        title: "BOOST",
+        description: "Welcome to the official BOOST Energy Drink website project! This responsive, animated, and visually appealing site showcases different BOOST energy drink flavors with engaging hover effects and animations.",
+        tech: ['TypeScript','Next.js','Tailwind CSS', 'Framer-motion'],
+        live: "https://boost-energy-drink.vercel.app/",
+        git: "https://github.com/dornarajK/BOOST-Energy-Drink"
     },
     {
         kuva: Focuse,
