@@ -43,7 +43,7 @@ export const journeyData: JourneyItem[] = [
     },
     {
         title: "KT-verkkokauppa 2023 (Work internship)",
-        period: "14.08.2923 - 13.10.2023",
+        period: "14.08.2023 - 13.10.2023",
         description: "BIOS update and computer functionality check/update"
     },
 ]
