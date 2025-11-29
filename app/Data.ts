@@ -56,6 +56,11 @@ export const Education: EducationItem[] = [
         period: "08.2022 - 05.2025",
         description: "Software Development"
     },
+    {
+        title: "Metropolia Ammattikorkeakoulu",
+        period: "1.8.2025 - 31.7.2030",
+        description: "Information and Communication Technology Degree Programme"
+    },
 ]
 
 
