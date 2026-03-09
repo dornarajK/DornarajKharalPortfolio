@@ -1,5 +1,5 @@
 import { Variants } from "framer-motion";
-export const menuVariants = {
+export const menuVariants:Variants = {
   closed: {
     opacity: 0,
     x: "100%",
