@@ -32,7 +32,7 @@ export default function MyProjects() {
       >
         {projectData.map((project, index) => (
           <motion.div
-            key={project.title}
+            key={`${project.title}-${index}`}
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: index * 0.1 }}
@@ -47,7 +47,7 @@ export default function MyProjects() {
                 priority={index < 2}
                 quality={90}
                 className="object-cover object-center transition-transform duration-500 group-hover:scale-105"
-                style={{ objectPosition: 'center' }}
+                style={{ objectPosition: "center" }}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
